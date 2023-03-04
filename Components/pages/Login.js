@@ -3,12 +3,15 @@ import React from 'react';
 import {Button, TextInput} from 'react-native-paper';
 import {theme} from '../core/theme';
 import {useNavigation} from '@react-navigation/native';
+import {CreatePartner} from '../../firebase/config';
 
 const Login = () => {
   const navigation = useNavigation();
   const [username, setUsername] = React.useState('');
   const [Password, setPassword] = React.useState('');
   const [PasswordShow, setPasswordShow] = React.useState(true);
+
+
 
   return (
     <View style={styles.container}>
@@ -26,13 +29,14 @@ const Login = () => {
         style={{width: '80%', marginBottom: 25}}
         label="User Name"
         value={username}
-        onChangeText={username => setUsername(username)}
+        onChangeText={setUsername}
       />
       <TextInput
         label="Password"
         secureTextEntry={PasswordShow}
         right={
           <TextInput.Icon
+            value={Password}
             icon="eye"
             onPress={() =>
               PasswordShow === true
@@ -42,7 +46,6 @@ const Login = () => {
           />
         }
         style={{width: '80%', marginBottom: 25}}
-        value={Password}
         onChangeText={Password => setPassword(Password)}
       />
       <View
@@ -55,7 +58,7 @@ const Login = () => {
           style={{margin: 5}}
           icon="login"
           mode="contained"
-          onPress={() => console.log('Pressed')}>
+          onPress={() => CreatePartner({username, password})}>
           Login
         </Button>
         <Button
@@ -64,6 +67,13 @@ const Login = () => {
           mode="outlined"
           onPress={() => navigation.navigate('Sign In')}>
           Sign In
+        </Button>
+        <Button
+          style={{margin: 5}}
+          icon="door"
+          mode="outlined"
+          onPress={() => navigation.navigate('OWAESignIn')}>
+          OWAESignIn
         </Button>
       </View>
     </View>
@@ -79,3 +89,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+

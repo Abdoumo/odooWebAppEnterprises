@@ -21,7 +21,7 @@ function HomeScreen({navigation}) {
       <DropDown items={options} />
       <Feather
         onPress={() => navigation.navigate('Login Panel')}
-        name="sliders"
+        name="settings"
         style={{
           color: 'black',
           fontSize: 50,

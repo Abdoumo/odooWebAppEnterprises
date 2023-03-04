@@ -7,14 +7,14 @@ const SIgnIn = () => {
   return (
     <View style={styles.container}>
       <Button
-        style={{ margin: 5 }}
+        style={{margin: 5}}
         icon="phone"
         mode="outlined"
         onPress={() => Linking.openURL(`tel:+213541885897`)}>
         Call us In Our hot line
       </Button>
       <Button
-        style={{ margin: 5 }}
+        style={{margin: 5}}
         icon="email"
         mode="outlined"
         onPress={() => Linking.openURL(`mailto:bedoushop@gmail.com`)}>

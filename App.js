@@ -6,8 +6,10 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './Components/Screens/HomeScreen';
 import DetailsScreen from './Components/Screens/Details';
-import Login from './Components/Screens/Login';
-import SIgnIn from './Components/Screens/SIgnIn';
+import Login from './Components/pages/Login';
+import OWAESignIn from './Components/pages/OWAESignIn.js';
+import SIgnIn from './Components/pages/SIgnIn';
+import Dashboard from './Components/pages/Dashboard';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +28,8 @@ function App() {
         <Stack.Screen name="WEBAPP" component={DetailsScreen} />
         <Stack.Screen name="Login Panel" component={Login} />
         <Stack.Screen name="Sign In" component={SIgnIn} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="OWAESignIn" component={OWAESignIn} />
       </Stack.Navigator>
     </NavigationContainer>
   );
